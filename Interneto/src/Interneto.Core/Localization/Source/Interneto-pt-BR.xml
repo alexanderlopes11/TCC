@@ -36,7 +36,7 @@
     <text name="TenantName_Regex_Description" value="Tenant deve ter no mínimo 2 caracteres, começa com uma letra e continuar com letra, número, traço ou sublinhado." />
     <text name="DefaultPasswordIs" value="Senha padrão é {0}" />
     <text name="CanBeEmptyToLoginAsHost" value="Pode estar vazio para acessar como Host." />
-    <text name="Register" value="Registrar" />
+    <text name="Register" value="Criar uma conta" />
     <text name="OrLoginWith" value="Ou faça o login com" />
     <text name="WaitingForActivationMessage" value="A sua conta está esperando para ser ativado pelo administrador do sistema." />
     <text name="TenantSelection" value="Seleção de Tenant" />

@@ -4,6 +4,16 @@
         '$scope', function ($scope) {
             var vm = this;
 
+            let promise = new Promise((resolve, reject) => {
+                document.getElementById("navbar-top").style.backgroundColor = "rgb(132,96,117)";
+                document.getElementById("navbar-top").style.boxShadow = "none";
+                document.getElementById("navbar-logo").style.opacity = "100%";
+
+                setTimeout(() => resolve("done!"), 200);
+            })
+
+            abp.ui.setBusy("body", promise);
+
             var init = function () {
 
                 function initSummaries() {

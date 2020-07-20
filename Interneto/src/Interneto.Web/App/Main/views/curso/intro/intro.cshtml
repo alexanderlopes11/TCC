@@ -1,0 +1,33 @@
+﻿@using System.Web.Optimization
+@Scripts.Render("~/Bundles/home-index")
+<div ng-controller="app.views.intro as vm">
+    <div class="row">
+        <div class="col-sm-4">
+        </div>
+        <div class="col-sm-8 align-left">
+            <div class="block-header font-interneto" style="padding: 0 0 1% 0;">
+                <h1>INTRODUÇÃO</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-4 align-center">
+            <h2><br />Abra o vídeo <br /> para assistir</h2>
+            <div class="icon">
+                <br />
+                <i class="fa fa-share fa-5x" style="color:white;transform: rotateX(180deg);"></i>
+            </div>
+            <br /><br /><br /><br />
+            <button class="btn btn-warning no-click">Se precisar, peça ajuda ao NETO.</button>
+        </div>
+        <div class="col-sm-8">
+            <div class="align-left">
+                <iframe width="720" height="405"
+                        src="https://www.youtube-nocookie.com/embed/-MymdLZwg50?autoplay=1&controls=0&rel=0&showinfo=0&fs=0&loop=1"
+                        frameborder="0">
+                </iframe>
+            </div>
+        </div>
+    </div>
+</div>

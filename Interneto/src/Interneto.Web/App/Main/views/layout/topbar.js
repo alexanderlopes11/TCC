@@ -1,19 +1,13 @@
 ﻿(function () {
     var controllerId = 'app.views.layout.topbar';
     angular.module('app').controller(controllerId, [
-        '$rootScope', '$state', 'appSession',
-        function ($rootScope, $state, appSession) {
+        '$rootScope', '$state', '$location', 'appSession',
+        function ($rootScope, $state, $location, appSession) {
             var vm = this;
-            vm.languages = [];
-            vm.currentLanguage = {};
-
-            function init() {
-                vm.languages = abp.localization.languages;
-                vm.currentLanguage = abp.localization.currentLanguage;
-            }
-
-            vm.changeLanguage = function (languageName) {
-                location.href = abp.appPath + 'AbpLocalization/ChangeCulture?cultureName=' + languageName + '&returnUrl=' + window.location.pathname + window.location.hash;
+            
+            
+            function init() {    
+                document.getElementById("LoginButton").style.display = "none";
             }
 
             init();

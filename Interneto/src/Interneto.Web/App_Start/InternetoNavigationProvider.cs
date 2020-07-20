@@ -25,11 +25,11 @@ namespace Interneto.Web
                         )
                 ).AddItem(
                     new MenuItemDefinition(
-                        "Tenants",
-                        L("Tenants"),
-                        url: "#tenants",
+                        "Mouse",
+                        L("Mouse"),
+                        url: "#mouse",
                         icon: "fa fa-globe",
-                        requiredPermissionName: PermissionNames.Pages_Tenants
+                        requiresAuthentication: true
                         )
                 ).AddItem(
                     new MenuItemDefinition(

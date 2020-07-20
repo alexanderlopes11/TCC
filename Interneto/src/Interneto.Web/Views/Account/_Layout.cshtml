@@ -33,7 +33,7 @@
 <body class="login-page">
     <div class="login-box">
         <div class="logo">
-            <a href="javascript:void(0);">Interneto</a>
+            <a href="javascript:void(0);"><h1>INTERNETO</h1></a>
         </div>
 
         @if (ViewBag.IsMultiTenancyEnabled)
@@ -43,11 +43,9 @@
 
         @RenderBody()
 
-        @Html.Action("_AccountLanguages", "Account")
-
         <div class="row">
             <div class="col-xs-12 text-center" style="color: #e9e9e9">
-                <small>&copy; @DateTime.Now.Year Interneto. <b>Version </b> @AppVersionHelper.Version [@AppVersionHelper.ReleaseDate.ToString("yyyyMMdd")]</small>
+                <small>&copy; @DateTime.Now.Year Interneto. </small>
             </div>
         </div>
 

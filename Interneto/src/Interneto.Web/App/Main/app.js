@@ -40,16 +40,6 @@
                 $urlRouterProvider.otherwise('/roles');
             }
 
-            if (abp.auth.hasPermission('Pages.Tenants')) {
-                $stateProvider
-                    .state('tenants', {
-                        url: '/tenants',
-                        templateUrl: '/App/Main/views/tenants/index.cshtml',
-                        menu: 'Tenants' //Matches to name of 'Tenants' menu in InternetoNavigationProvider
-                    });
-                $urlRouterProvider.otherwise('/tenants');
-            }
-
             $stateProvider
                 .state('home', {
                     url: '/',
@@ -61,6 +51,29 @@
                     templateUrl: '/App/Main/views/about/about.cshtml',
                     menu: 'About' //Matches to name of 'About' menu in InternetoNavigationProvider
                 });
+
+
+            $stateProvider
+                .state('intro', {
+                    url: '/intro',
+                    templateUrl: '/App/Main/views/curso/intro/intro.cshtml'
+                });
+            $urlRouterProvider.otherwise('/intro');
+
+            $stateProvider
+                .state('mouse', {
+                    url: '/mouse',
+                    templateUrl: '/App/Main/views/curso/mouse/mouse.cshtml',
+                });
+            $urlRouterProvider.otherwise('/mouse');
+
+            $stateProvider
+                .state('treinar', {
+                    url: '/treinar',
+                    templateUrl: '/App/Main/views/curso/mouse/treinar.cshtml',
+                });
+            $urlRouterProvider.otherwise('/treinar');
+
         }
     ]);
 

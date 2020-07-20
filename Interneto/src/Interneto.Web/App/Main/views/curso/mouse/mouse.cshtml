@@ -1,0 +1,41 @@
+﻿@using System.Web.Optimization
+@Scripts.Render("~/Bundles/home-index")
+    <div ng-controller="app.views.mouse as vm">
+        <div class="row">
+            <div class="col-sm-4">
+            </div>
+            <div class="col-sm-8 align-left">
+                <div class="block-header font-interneto" style="padding: 0 0 1% 0;">
+                    <h1 style="display:inline;">O MOUSE - </h1>
+                    <h3 style="display:inline;">Uma extensão da sua mão</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-4" style="padding-left:3%;">
+                <div id="indice" class="align-left">
+                    <br /><button class="btn btn-warning no-click">Aprendendo a:</button>
+                    <br /><br />
+                    <ul>
+                        <li><h3>Clicar</h3></li>
+                        <li><h3>Abrir</h3></li>
+                        <li><h3>Arrastar</h3></li>
+                    </ul>
+                </div>
+                <div id="treinar" class="align-center">
+                    <button onclick="location.href='/#/treinar'" id="LoginButton" class="btn btn-success btn-lg btn3d" type="button" style="margin-top:30%;left: -3%;">
+                        <h2>VAMOS TREINAR!</h2>
+                    </button>
+                </div>
+            </div>
+            <div class="col-sm-8">
+                <div class="align-left">
+                    <iframe width="720" height="405"
+                            src="https://www.youtube-nocookie.com/embed/XZWIDBu6sSU?autoplay=1&controls=0&rel=0&showinfo=0&fs=0&loop=1"
+                            frameborder="0">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,81 @@
+﻿@using System.Web.Optimization
+@Scripts.Render("~/Bundles/home-index")
+    <div ng-controller="app.views.treinar as vm" ng-mousedown="vm.countClicks()">
+        <div class="row">
+            <div class="align-center">
+                <div class="block-header font-interneto" style="padding: 0 0 1% 0;">
+                    <h1 ng-if="!vm.proximo" style="display:inline;">CLIQUE NO BOTÃO INDICADO</h1>
+                    <h1 ng-if="vm.proximo" style="display:inline;">MUITO BOM, VOCÊ CONSEGUIU!</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="align-center">
+                    <button id="button1" ng-if="!vm.proximo" ng-click="vm.pressed('button1')" class="btn btn-success btn-lg btn3d" type="button" style="margin-top:30%;left: -3%;">
+                        <h2>CLIQUE AQUI</h2>
+                    </button>
+                    <div class="card" ng-if="vm.proximo" style="margin-top:62px; margin-bottom:0;">
+                        <div class="header">
+                            <div class="row clearfix">
+                                <div class="col-xs-12 col-sm-6">
+                                    <h2>VOCÊ ACERTOU:</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="body">
+                            <div class="alert alert-success">
+                                <strong>{{vm.taxaAcerto}}</strong>%
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="align-center">
+                    <button id="button2" ng-if="!vm.proximo" ng-click="vm.pressed('button2')" class="btn btn-success btn-lg btn3d" type="button" style="margin-top:30%;left: -3%;">
+                        <h2>CLIQUE AQUI</h2>
+                    </button>
+                    <button id="buttonproximo" ng-if="vm.proximo" onclick="location.href='#/treinar2'"class="btn btn-success btn-lg btn3d" type="button" style="margin-top:30%;left: -3%;">
+                        <h2>CONTINUAR</h2>
+                    </button>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="align-center">
+                    <button id="button3" ng-click="vm.pressed('button3')" class="btn btn-success btn-lg btn3d" type="button" style="margin-top:30%;left: -3%;">
+                        <h2>CLIQUE AQUI</h2>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div id="div4" class="col-md-4">
+                <div class="align-center">
+                    <button id="button4" ng-click="vm.pressed('button4')" class="btn btn-success btn-lg btn3d" type="button" style="margin-top:30%;left: -3%;">
+                        <h2>CLIQUE AQUI</h2>
+                    </button>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="align-center">
+                    <button id="button5" ng-if="!vm.proximo" ng-click="vm.pressed('button5')" class="btn btn-success btn-lg btn3d" type="button" style="margin-top:30%;left: -3%;">
+                        <h2>CLIQUE AQUI</h2>
+                    </button>
+                    <button id="buttonproximo" ng-if="vm.proximo" ng-click="vm.refresh()" class="btn btn-warning btn-lg btn3d" type="button" style="margin-top:30%;left: -3%;">
+                        <h2>FAZER NOVAMENTE</h2>
+                    </button>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="align-center">
+                    <button id="button6" ng-click="vm.pressed('button6')" class="btn btn-success btn-lg btn3d" type="button" style="margin-top:30%;left: -3%;">
+                        <h2>CLIQUE AQUI</h2>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
