@@ -1,0 +1,109 @@
+﻿@using System.Web.Optimization
+@Scripts.Render("~/Bundles/home-index")
+<div ng-controller="app.views.treinarAbrir as vm" ng-mousedown="vm.countClicks()">
+    <div class="row">
+        <div class="align-center">
+            <div class="block-header font-interneto" style="padding: 0 0 1% 0;">
+                <h1 ng-if="!vm.proximo">ABRA A PASTA</h1>
+                <h3 ng-if="!vm.proximo">DÊ 2 CLIQUES RÁPIDOS ENCIMA DELA</h3>
+                <button ng-if="vm.proximo" class="btn btn-success no-click">
+                    <h1 style="display:inline;">MUITO BOM, VOCÊ CONSEGUIU!</h1>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-3">
+            <div class="card" ng-if="vm.proximo" style="margin-top:62px; margin-bottom:0;">
+                <div class="header">
+                    <div class="row clearfix">
+                        <div class="col-xs-12">
+                            <h2>VOCÊ ACERTOU:</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="body">
+                    <div class="alert alert-success">
+                        <strong>{{vm.taxaAcerto}}</strong>% CLIQUES CERTOS
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="align-center">
+                <div id="wrapper">
+                    <svg viewBox="-10 -68 75 71"
+                         xmlns="http://www.w3.org/2000/svg"
+                         xmlns:xlink="http://www.w3.org/1999/xlink"
+                         ng-dblclick="vm.open()">
+
+                        <g id="folder" stroke-width="5" stroke="currentColor">
+                            <g id="folder-back" fill="none">
+                                <path d="M0,0 h55 v-35 h-30 l-3, -5 h-12 l-3 5 H0z" />
+                            </g>
+                            <g id="folder-add">
+                                <path d="M30, -53 h20 m-10 -10 v20" />
+                            </g>
+                            <g id="folder-front" fill="currentColor">
+                                <rect width="55" height="30" y="-30" />
+                            </g>
+                        </g>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="align-center" ng-if="vm.proximo">
+                <div class="row">
+                    <button id="buttonproximo" onclick="location.href='#/treinarArrastar'" class="btn btn-success btn-lg btn3d" type="button" style="margin-top:30%;left: -3%;">
+                        <h2>CONTINUAR</h2>
+                    </button>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <button id="buttonproximo" ng-click="vm.refresh()" class="btn btn-warning btn-lg btn3d" type="button" style="margin-top:30%;left: -3%;">
+                            <h2>FAZER NOVAMENTE</h2>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* to calculate width when closed */
+    svg {
+        width: calc(var(--width, 72%)*34.1/25);
+        height: auto;
+    }
+
+    #folder-front,
+    #folder-back,
+    #folder-add {
+        transition: all .2s ease-in-out;
+    }
+
+    #folder-add {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    .folder-open #folder-front {
+        transform: translate(.9px,.2px) skew(-10deg) scaleY(.9);
+    }
+
+    .folder-open #folder-back {
+        transform: skew(10deg);
+    }
+
+    .folder-open #folder-add {
+        opacity: 1;
+        transform: translateY(0);
+    }
+</style>
+
+<!-- https://uimovement.com/ui/5217/drag-to-folder/ -->

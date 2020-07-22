@@ -1,14 +1,14 @@
 ﻿(function () {
-    var controllerId = 'app.views.treinar';
+    var controllerId = 'app.views.treinarAbrir';
     angular.module('app').controller(controllerId, [
         '$scope', function ($scope) {
             var vm = this;
 
             var count = 0;
-            var buttonCount = 0;
+            var buttonCount = 2;
             vm.proximo = false;
             vm.taxaAcerto = 0;
-
+            
             let promise = new Promise((resolve, reject) => {
                 document.getElementById("navbar-top").style.backgroundColor = "rgb(14,91,126)";
                 document.getElementById("navbar-top").style.boxShadow = "none";
@@ -24,30 +24,21 @@
             }
             init();
 
+            vm.open = function () {
+                document.getElementById('wrapper').classList.toggle('folder-open');
 
-            vm.pressed = function (button) {
-                document.getElementById(button).style.opacity = "15%";
-                document.getElementById(button).classList.remove("btn3d");
-                document.getElementById(button).disabled = true;
-                buttonCount++;
-
-                if (buttonCount === 6)
-                    finished();
-            };
-
-            vm.countClicks = function () {
-                count = count + 1;
+                finished();
             }
 
             function finished() {
-                document.getElementById("button3").style.opacity = "0%";
-                document.getElementById("button4").style.opacity = "0%";
-                document.getElementById("button6").style.opacity = "0%";
-
                 var totalErros = count - buttonCount;
                 vm.taxaAcerto = 100 - (Math.round((totalErros * 100) / count));
 
                 vm.proximo = true;
+            }
+
+            vm.countClicks = function () {
+                count = count + 1;
             }
 
             vm.refresh = function () {

@@ -74,6 +74,20 @@
                 });
             $urlRouterProvider.otherwise('/treinar');
 
+            $stateProvider
+                .state('treinarAbrir', {
+                    url: '/treinarAbrir',
+                    templateUrl: '/App/Main/views/curso/mouse/treinarAbrir.cshtml',
+                });
+            $urlRouterProvider.otherwise('/treinarAbrir');
+
+            $stateProvider
+                .state('treinarArrastar', {
+                    url: '/treinarArrastar',
+                    templateUrl: '/App/Main/views/curso/mouse/treinarArrastar.cshtml',
+                });
+            $urlRouterProvider.otherwise('/treinarArrastar');
+
         }
     ]);
 

@@ -1,0 +1,62 @@
+﻿@using System.Web.Optimization
+@Scripts.Render("~/Bundles/home-index")
+<div ng-controller="app.views.treinarArrastar as vm" ng-mousedown="vm.countClicks()">
+    <div class="row">
+        <div class="align-center">
+            <div class="block-header font-interneto" style="padding: 0 0 1% 0;">
+                <h1 ng-if="!vm.proximo">ARRASTE A BOLA PARA O OUTRO LADO</h1>
+                <h3 ng-if="!vm.proximo">MANTENHA O CLIQUE PRESSIONADO ENQUANTO CARREGA</h3>
+                <button ng-if="vm.proximo" class="btn btn-success no-click">
+                    <h1 style="display:inline;">MUITO BOM, VOCÊ CONSEGUIU!</h1>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card" ng-if="vm.proximo" style="margin-top:62px; margin-bottom:0;">
+                <div class="header">
+                    <div class="row clearfix">
+                        <div class="col-xs-12">
+                            <h2>VOCÊ ACERTOU:</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="body">
+                    <div class="alert alert-success">
+                        <strong>{{vm.taxaAcerto}}</strong>% CLIQUES CERTOS
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="align-center">
+                <div id="drag-drop-basic">
+                    <div id="source-container" data-role="drag-drop-container">
+                        <div id="drag-source" draggable="true"></div>
+                    </div>
+                    <div id="target-container" data-role="drag-drop-container"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="align-center" ng-if="vm.proximo">
+                <div class="row">
+                    <button id="buttonproximo" onclick="location.href='#/treinarArrastar'" class="btn btn-success btn-lg btn3d" type="button" style="margin-top:30%;left: -3%;">
+                        <h2>CONTINUAR</h2>
+                    </button>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <button id="buttonproximo" ng-click="vm.refresh()" class="btn btn-warning btn-lg btn3d" type="button" style="margin-top:30%;left: -3%;">
+                            <h2>FAZER NOVAMENTE</h2>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

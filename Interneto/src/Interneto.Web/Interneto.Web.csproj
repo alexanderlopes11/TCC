@@ -489,6 +489,8 @@
       <DependentUpon>main.css</DependentUpon>
     </Content>
     <Content Include="App\Main\services\appSession.js" />
+    <Content Include="App\Main\views\curso\mouse\treinarArrastar.js" />
+    <Content Include="App\Main\views\curso\mouse\treinarAbrir.js" />
     <Content Include="App\Main\views\curso\mouse\treinar.js" />
     <Content Include="App\Main\views\curso\mouse\mouse.js" />
     <Content Include="App\Main\views\directives\autoFocus.js" />
@@ -2742,6 +2744,8 @@
     <Content Include="App\Main\views\curso\intro\intro.cshtml" />
     <Content Include="App\Main\views\curso\mouse\mouse.cshtml" />
     <Content Include="App\Main\views\curso\mouse\treinar.cshtml" />
+    <Content Include="App\Main\views\curso\mouse\treinarAbrir.cshtml" />
+    <Content Include="App\Main\views\curso\mouse\treinarArrastar.cshtml" />
     <None Include="bundleconfig.json" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
